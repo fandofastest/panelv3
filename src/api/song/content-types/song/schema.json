@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "singularName": "song",
+    "pluralName": "songs",
+    "displayName": "Song",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Judul"
+    },
+    "year": {
+      "type": "string",
+      "default": "2000"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "totalplays": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "album": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::album.album"
+    },
+    "artist": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::artist.artist"
+    },
+    "genre": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::genre.genre"
+    },
+    "duration": {
+      "type": "string",
+      "default": "00:00"
+    }
+  }
+}
